@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAL.EF.Models
+{
+    public class User
+    {
+        [Key]
+        public int Id { get; set; }
+        [Required]
+        [Index(IsUnique = true)]
+        [StringLength(30)]
+        public string Username { get; set; }
+        [Required]
+        [StringLength(12)]
+        public string Password { get; set; }
+        public string Token { get; set; }
+        [Required]
+        [StringLength(10)]
+        public string UserType { get; set; }
+    }
+}

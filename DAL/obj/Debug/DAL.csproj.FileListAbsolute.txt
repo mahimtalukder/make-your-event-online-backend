@@ -1,0 +1,14 @@
+C:\MyCodeBase\MakeYourEventBackend\DAL\bin\Debug\DAL.dll
+C:\MyCodeBase\MakeYourEventBackend\DAL\bin\Debug\DAL.pdb
+C:\MyCodeBase\MakeYourEventBackend\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\MyCodeBase\MakeYourEventBackend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\MyCodeBase\MakeYourEventBackend\DAL\obj\Debug\DAL.dll
+C:\MyCodeBase\MakeYourEventBackend\DAL\obj\Debug\DAL.pdb
+C:\MyCodeBase\MakeYourEventBackend\DAL\bin\Debug\DAL.dll.config
+C:\MyCodeBase\MakeYourEventBackend\DAL\bin\Debug\EntityFramework.dll
+C:\MyCodeBase\MakeYourEventBackend\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\MyCodeBase\MakeYourEventBackend\DAL\bin\Debug\EntityFramework.xml
+C:\MyCodeBase\MakeYourEventBackend\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\MyCodeBase\MakeYourEventBackend\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\MyCodeBase\MakeYourEventBackend\DAL\obj\Debug\DAL.Migrations.createAllTable.resources
+C:\MyCodeBase\MakeYourEventBackend\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
