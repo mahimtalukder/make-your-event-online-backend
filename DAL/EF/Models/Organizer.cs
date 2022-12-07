@@ -10,7 +10,12 @@ namespace DAL.EF.Models
 {
     public class Organizer
     {
+        /*[Key]
+        [ForeignKey("User")]
+        public string Username { get; set; }*/
+
         [Key]
+        [ForeignKey("User")]
         public int Id { get; set; }
         [Required]
         [StringLength(50)]
@@ -29,7 +34,17 @@ namespace DAL.EF.Models
         public string ProfilePicture { get; set; }
         [Required]
         //[ForeignKey("Location")]
-        public int LocationId { get; set; }
-        //;public virtual Location Location { get; set; }
+        //public int LocationId { get; set; }
+        //public virtual Location Location { get; set; }
+
+        public virtual User User { get; set; } 
+        public virtual List<Service> Services { get; set; }
+        public virtual List<OrganizingArea> OrganizingAreas { get; set; }   
+
+        public Organizer()
+        {   
+            Services = new List<Service>();
+            OrganizingAreas = new List<OrganizingArea>();
+        }
     }
 }

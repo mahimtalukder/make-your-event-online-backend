@@ -13,5 +13,11 @@ namespace DAL.EF.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
+
+        public virtual List<Service> Services { get; set;}
+        public Category()
+        {
+            Services = new List<Service>();
+        }
     }
 }

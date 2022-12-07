@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.EF
 {
-    public class OrganizeYourEventContex : DbContext
+    public class OrganizeYourEventContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<ActionList> ActionLists { get; set; }

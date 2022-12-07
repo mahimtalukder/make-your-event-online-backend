@@ -4,3 +4,9 @@ C:\MyCodeBase\MakeYourEventBackend\BLL\obj\Debug\BLL.csproj.AssemblyReference.ca
 C:\MyCodeBase\MakeYourEventBackend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\MyCodeBase\MakeYourEventBackend\BLL\obj\Debug\BLL.dll
 C:\MyCodeBase\MakeYourEventBackend\BLL\obj\Debug\BLL.pdb
+D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\bin\Debug\BLL.dll
+D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\bin\Debug\BLL.pdb
+D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\Debug\BLL.dll
+D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\Debug\BLL.pdb

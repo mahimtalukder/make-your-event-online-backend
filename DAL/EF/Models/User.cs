@@ -23,5 +23,17 @@ namespace DAL.EF.Models
         [Required]
         [StringLength(10)]
         public string UserType { get; set; }
+
+        public virtual Admin Admin { get; set; }    
+        public virtual Organizer Organizer { get; set; }
+        public virtual Customer Customer { get; set; }  
+
+        public virtual List<Log> Logs { get; set; }
+        public User()
+        {
+            Logs = new List<Log>();
+        }
+
+
     }
 }

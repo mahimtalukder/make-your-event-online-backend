@@ -18,5 +18,16 @@ namespace DAL.EF.Models
         public string District { get; set; }
         [StringLength(50)]
         public string Thana { get; set; }
+
+        public virtual List<OrganizingArea> OrganizingAreas { get; set;}
+
+        public virtual List<ShippingAddress> ShippingAddresses { get; set;}
+
+        public Location()
+        {
+            OrganizingAreas= new List<OrganizingArea>();
+            ShippingAddresses= new List<ShippingAddress>();
+        }
+
     }
 }

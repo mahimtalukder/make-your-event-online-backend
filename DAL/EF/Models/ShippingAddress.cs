@@ -8,33 +8,31 @@ using System.Threading.Tasks;
 
 namespace DAL.EF.Models
 {
-    public class Order
+    public class ShippingAddress
     {
         [Key]
         public int Id { get; set; }
         [Required]
-        public double TotalPrice { get; set; }
+        [StringLength(200)]
+        public string Address{ get; set; }
         [Required]
-        public DateTime OrderDate { get; set; }
+        [StringLength(50)]
+        public string Tag { get; set; }
         [Required]
-        public int Status { get; set; }
+        [ForeignKey("Location")]
+        public int LocationId { get; set; }
         [Required]
-        public DateTime DeliveryDate { get; set; }
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
-        [Required]
-        [ForeignKey("ShippingAddress")]
-        public int ShippingId { get; set; }
 
-
+        public virtual Location Location { get; set; }  
         public virtual Customer Customer { get; set; }
-        public virtual ShippingAddress ShippingAddress { get; set; }
-        public virtual List<OrderDetail> OrderDetails { get; set; }
 
-        public Order()
+        public virtual List<Order> Orders { get; set; }  
+
+        public ShippingAddress()
         {
-            OrderDetails = new List<OrderDetail>();
+            Orders = new List<Order>();
         }
-
     }
 }

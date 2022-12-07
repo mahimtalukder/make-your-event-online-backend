@@ -11,6 +11,7 @@ namespace DAL.EF.Models
     public class Admin
     {
         [Key]
+        [ForeignKey("User")]
         public int Id { get; set; }
         [Required]
         [StringLength(50)]
@@ -24,5 +25,7 @@ namespace DAL.EF.Models
         public string Phone { get; set; }
         [Required]
         public string ProfilePicture { get; set; }
+
+        public virtual User User { get; set; }
     }
 }
