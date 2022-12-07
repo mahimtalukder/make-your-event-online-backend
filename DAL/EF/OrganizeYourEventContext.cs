@@ -24,6 +24,7 @@ namespace DAL.EF
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceCatalog> ServiceCatalogs { get; set; }
+        public DbSet<ShippingAddress> ShippingAddresses { get; set; }
      
 
     }
