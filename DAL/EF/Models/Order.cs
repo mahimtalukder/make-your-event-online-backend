@@ -22,9 +22,9 @@ namespace DAL.EF.Models
         public DateTime DeliveryDate { get; set; }
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
-        [Required]
+
         [ForeignKey("ShippingAddress")]
-        public int ShippingId { get; set; }
+        public int? ShippingId { get; set; }
 
 
         public virtual Customer Customer { get; set; }

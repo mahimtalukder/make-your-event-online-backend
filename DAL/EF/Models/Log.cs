@@ -13,13 +13,13 @@ namespace DAL.EF.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [ForeignKey("Action")]
+        [ForeignKey("ActionList")]
         public int ActionId{ get; set; }
         [Required]
         public DateTime CreateTime { get; set; }
         [ForeignKey("User")]
         public int? UserId { get; set; }
-        public virtual Action Action { get; set; }
+        public virtual ActionList ActionList { get; set; }
         public virtual User User { get; set; }
     }
 }

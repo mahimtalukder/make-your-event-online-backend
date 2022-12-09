@@ -17,6 +17,8 @@ namespace DAL.EF.Models
         public int ServiceId { get; set; }
         [Required]
         public string Source{ get; set; }
+        [Required]
+        public bool IsThumbnail { get; set; }
 
         public virtual Service Service { get; set; }
     }

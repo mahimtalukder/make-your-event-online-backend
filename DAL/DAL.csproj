@@ -68,9 +68,9 @@
     <Compile Include="EF\Models\ShippingAddress.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="EF\OrganizeYourEventContext.cs" />
-    <Compile Include="Migrations\202212050956318_createAllTable.cs" />
-    <Compile Include="Migrations\202212050956318_createAllTable.designer.cs">
-      <DependentUpon>202212050956318_createAllTable.cs</DependentUpon>
+    <Compile Include="Migrations\202212091342055_TableWithRelations.cs" />
+    <Compile Include="Migrations\202212091342055_TableWithRelations.designer.cs">
+      <DependentUpon>202212091342055_TableWithRelations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,8 +80,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202212050956318_createAllTable.resx">
-      <DependentUpon>202212050956318_createAllTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212091342055_TableWithRelations.resx">
+      <DependentUpon>202212091342055_TableWithRelations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

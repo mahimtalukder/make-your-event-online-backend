@@ -16,6 +16,8 @@ namespace DAL.EF.Models
         public int LocationId { get; set; }
         [ForeignKey("Organizer")]
         public int OrganizerId { get; set; }
+        [Required]
+        public bool MainArea { get; set; }
 
         public virtual Organizer Organizer { get; set; }    
         public virtual Location Location { get; set; }

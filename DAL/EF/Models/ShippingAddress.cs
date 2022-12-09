@@ -21,13 +21,11 @@ namespace DAL.EF.Models
         [Required]
         [ForeignKey("Location")]
         public int LocationId { get; set; }
-        [Required]
         [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
 
         public virtual Location Location { get; set; }  
         public virtual Customer Customer { get; set; }
-
         public virtual List<Order> Orders { get; set; }  
 
         public ShippingAddress()
