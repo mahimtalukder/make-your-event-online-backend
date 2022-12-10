@@ -27,5 +27,50 @@ namespace BLL.Services
             }
             return null;
         }
+        public static List<AdminDTO> Get()
+        {
+            var data = DataAccessFactory.AdminDataAccess().Get();
+            var cfg = new MapperConfiguration(c => {
+                c.CreateMap<Admin, AdminDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            return mapper.Map<List<AdminDTO>>(data);
+        }
+        public static AdminDTO Get(int id)
+        {
+            var data = DataAccessFactory.AdminDataAccess().Get(id);
+            var cfg = new MapperConfiguration(c => {
+                c.CreateMap<Admin, AdminDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            return mapper.Map<AdminDTO>(data);
+        }
+
+        public static AdminDTO Delete(int id)
+        {
+            var data = DataAccessFactory.AdminDataAccess().Delete(id);
+            var cfg = new MapperConfiguration(c => {
+                c.CreateMap<Admin, AdminDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            return mapper.Map<AdminDTO>(data);
+        }
+
+        public static AdminDTO Update(AdminDTO admin)
+        {
+            var cfg = new MapperConfiguration(c => {
+                c.CreateMap<AdminDTO, Admin>();
+                c.CreateMap<Admin, AdminDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            var data = mapper.Map<Admin>(admin);
+            var rt = DataAccessFactory.AdminDataAccess().Update(data);
+            if (rt != null)
+            {
+                return mapper.Map<AdminDTO>(rt);
+            }
+            return null;
+        }
+
     }
 }
