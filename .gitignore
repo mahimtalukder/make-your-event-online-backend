@@ -1,8 +1,0 @@
-ApplicationLayer/Web.config
-ApplicationLayer/bin/
-ApplicationLayer/obj/
-.vs
-BLL/bin/
-BLL/obj/
-DAL/bin/
-DAL/obj/
