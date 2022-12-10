@@ -16,19 +16,19 @@ namespace DAL
             return new AdminRepo();
         }
 
-        public static IRepo<User, int, User> UserDataAccess()
+        public static IRepo<Organizer, int, Organizer> OrganizerDataAccess()
         {
-            return new UserRepo();
+            return new OrganizerRepo();
         }
 
-        public static IRepo<Customer,int, Customer> CustomerDataAccess()
+        public static IRepo<OrganizingArea, int, OrganizingArea> OrganizingAreaDataAccess()
         {
-            return new CustomerRepo();
+            return new OrganizingAreaRepo();
         }
 
-        public static IRepo<Order, int, Order> OrderDataAccess()
+        public static IRepo<Location, int, Location> LocationDataAccess()
         {
-            return new OrderRepo();
+            return new LocationRepo();
         }
     }
 }

@@ -22,8 +22,7 @@ namespace DAL.Repo
 
         public bool Delete(int id)
         {
-            var DBUser = Get(id);
-            db.Users.Remove(DBUser);
+            db.Users.Remove(db.Users.SingleOrDefault(x => x.Id == id));
             if (db.SaveChanges() > 0)
             {
                 return true;
