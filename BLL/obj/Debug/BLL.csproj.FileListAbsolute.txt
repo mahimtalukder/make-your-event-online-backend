@@ -10,3 +10,7 @@ D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\De
 D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\Debug\BLL.dll
 D:\Classwork\10th Semester\.Net Programming\FINALTERM PROJECT\Backend\BLL\obj\Debug\BLL.pdb
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\BLL\obj\Debug\BLL.dll
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\BLL\obj\Debug\BLL.pdb

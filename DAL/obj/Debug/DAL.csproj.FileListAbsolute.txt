@@ -40,3 +40,9 @@ C:\Users\mdali\Documents\Final Project\make-your-event-online-backend\DAL\obj\De
 C:\Users\mdali\Documents\Final Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\mdali\Documents\Final Project\make-your-event-online-backend\DAL\obj\Debug\DAL.dll
 C:\Users\mdali\Documents\Final Project\make-your-event-online-backend\DAL\obj\Debug\DAL.pdb
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.Migrations.TableWithRelations.resources
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.dll
+D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.pdb
