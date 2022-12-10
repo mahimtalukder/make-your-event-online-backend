@@ -30,5 +30,10 @@ namespace DAL
         {
             return new LocationRepo();
         }
+
+        public static IRepo<Token, string, Token> TokenDataAccess()
+        {
+            return new TokenRepo();
+        }
     }
 }

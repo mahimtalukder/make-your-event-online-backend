@@ -53,6 +53,7 @@
     <Compile Include="DTOs\OrderDTO.cs" />
     <Compile Include="DTOs\OrganizerDTO.cs" />
     <Compile Include="DTOs\OrganizingAreaDTO.cs" />
+    <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminServices.cs" />
