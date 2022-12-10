@@ -30,5 +30,18 @@ namespace DAL
         {
             return new LocationRepo();
         }
+
+        public static IRepo<Customer, int, Customer> CustomerDataAccess()
+        {
+            return new CustomerRepo();
+        }
+        public static IRepo<Order, int, Order> OrderDataAccess()
+        {
+            return new OrderRepo();
+        }
+        public static IRepo<User, int, User> UserDataAccess()
+        {
+            return new UserRepo();
+        }
     }
 }

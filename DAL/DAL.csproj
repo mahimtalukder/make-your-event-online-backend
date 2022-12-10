@@ -84,6 +84,7 @@
     <Compile Include="Repo\AdminRepo.cs" />
     <Compile Include="Repo\CustomerRepo.cs" />
     <Compile Include="Repo\LocationRepo.cs" />
+    <Compile Include="Repo\OrderRepo.cs" />
     <Compile Include="Repo\OrganizerRepo.cs" />
     <Compile Include="Repo\OrganizingAreaRepo.cs" />
     <Compile Include="Repo\Repo.cs" />
