@@ -19,12 +19,12 @@ namespace DAL.Repo
 
         }
 
-        public ActionList Delete(int id)
+        public bool Delete(int id)
         {
             var action = Get(id);
             db.ActionLists.Remove(action);
-            db.SaveChanges();
-            return null;
+            if(db.SaveChanges()> 0){ return true; }
+            return false;
 
         }
 
