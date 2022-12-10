@@ -15,4 +15,5 @@ namespace DAL.Repo
             db = new OrganizeYourEventContext();
         }
     }
+
 }
