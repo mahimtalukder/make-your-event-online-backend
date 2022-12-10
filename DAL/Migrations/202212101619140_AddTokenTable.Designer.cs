@@ -7,13 +7,13 @@ namespace DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddTokenTableV2 : IMigrationMetadata
+    public sealed partial class AddTokenTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTokenTableV2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTokenTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202212101559534_AddTokenTableV2"; }
+            get { return "202212101619140_AddTokenTable"; }
         }
         
         string IMigrationMetadata.Source

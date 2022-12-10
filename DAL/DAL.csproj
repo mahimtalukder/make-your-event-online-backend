@@ -74,9 +74,9 @@
     <Compile Include="Migrations\202212091342055_TableWithRelations.designer.cs">
       <DependentUpon>202212091342055_TableWithRelations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212101559534_AddTokenTableV2.cs" />
-    <Compile Include="Migrations\202212101559534_AddTokenTableV2.designer.cs">
-      <DependentUpon>202212101559534_AddTokenTableV2.cs</DependentUpon>
+    <Compile Include="Migrations\202212101619140_AddTokenTable.cs" />
+    <Compile Include="Migrations\202212101619140_AddTokenTable.designer.cs">
+      <DependentUpon>202212101619140_AddTokenTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +98,8 @@
     <EmbeddedResource Include="Migrations\202212091342055_TableWithRelations.resx">
       <DependentUpon>202212091342055_TableWithRelations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212101559534_AddTokenTableV2.resx">
-      <DependentUpon>202212101559534_AddTokenTableV2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212101619140_AddTokenTable.resx">
+      <DependentUpon>202212101619140_AddTokenTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
