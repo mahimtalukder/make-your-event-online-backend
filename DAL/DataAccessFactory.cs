@@ -15,6 +15,10 @@ namespace DAL
         {
             return new AdminRepo();
         }
+        public static IRepo<ActionList, int, ActionList> ActionListDataAccess()
+        {
+            return new ActionListRepo();
+        }
 
         public static IRepo<Organizer, int, Organizer> OrganizerDataAccess()
         {
