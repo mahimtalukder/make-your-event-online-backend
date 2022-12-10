@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    internal class UserRepo: Repo, IRepo<User, int, User>
+    internal class OrderRepo : Repo, IRepo<Order, int, Order>
     {
-        public User Add(User obj)
+        public Order Add(Order obj)
         {
-            db.Users.Add(obj);
+            db.Orders.Add(obj);
             if (db.SaveChanges() > 0)
             {
                 return obj;
@@ -23,7 +23,7 @@ namespace DAL.Repo
         public bool Delete(int id)
         {
             var DBUser = Get(id);
-            db.Users.Remove(DBUser);
+            db.Orders.Remove(DBUser);
             if (db.SaveChanges() > 0)
             {
                 return true;
@@ -31,14 +31,14 @@ namespace DAL.Repo
             return false;
         }
 
-        public List<User> Get()
+        public List<Order> Get()
         {
-            return db.Users.ToList();
+            return db.Orders.ToList();
         }
 
-        public User Get(int id)
+        public Order Get(int id)
         {
-            var DBUser = db.Users.SingleOrDefault(x => x.Id == id);
+            var DBUser = db.Orders.SingleOrDefault(x => x.Id == id);
             if (DBUser != null)
             {
                 return DBUser;
@@ -46,7 +46,7 @@ namespace DAL.Repo
             return null;
         }
 
-        public User Update(User obj)
+        public Order Update(Order obj)
         {
             var DBUser = Get(obj.Id);
             db.Entry(DBUser).CurrentValues.SetValues(obj);

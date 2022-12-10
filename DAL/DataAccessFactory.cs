@@ -15,5 +15,20 @@ namespace DAL
         {
             return new AdminRepo();
         }
+
+        public static IRepo<User, int, User> UserDataAccess()
+        {
+            return new UserRepo();
+        }
+
+        public static IRepo<Customer,int, Customer> CustomerDataAccess()
+        {
+            return new CustomerRepo();
+        }
+
+        public static IRepo<Order, int, Order> OrderDataAccess()
+        {
+            return new OrderRepo();
+        }
     }
 }

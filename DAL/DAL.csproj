@@ -78,6 +78,7 @@
     <Compile Include="Repo\ActionListRepo.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
     <Compile Include="Repo\CustomerRepo.cs" />
+    <Compile Include="Repo\OrderRepo.cs" />
     <Compile Include="Repo\Repo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
   </ItemGroup>
