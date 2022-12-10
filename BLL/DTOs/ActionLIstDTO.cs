@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class ActionLIstDTO
+    public class ActionListDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
