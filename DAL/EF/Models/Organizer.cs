@@ -32,7 +32,6 @@ namespace DAL.EF.Models
         public string Address { get; set; }
         [Required]
         public string ProfilePicture { get; set; }
-        [Required]
         //[ForeignKey("Location")]
         //public int LocationId { get; set; }
         //public virtual Location Location { get; set; }

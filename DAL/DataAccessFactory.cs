@@ -15,5 +15,20 @@ namespace DAL
         {
             return new AdminRepo();
         }
+
+        public static IRepo<Organizer, int, Organizer> OrganizerDataAccess()
+        {
+            return new OrganizerRepo();
+        }
+
+        public static IRepo<OrganizingArea, int, OrganizingArea> OrganizingAreaDataAccess()
+        {
+            return new OrganizingAreaRepo();
+        }
+
+        public static IRepo<Location, int, Location> LocationDataAccess()
+        {
+            return new LocationRepo();
+        }
     }
 }
