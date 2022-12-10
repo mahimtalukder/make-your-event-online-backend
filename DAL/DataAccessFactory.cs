@@ -15,6 +15,18 @@ namespace DAL
         {
             return new AdminRepo();
         }
+        public static IRepo<ActionList, int, ActionList> ActionListDataAccess()
+        {
+            return new ActionListRepo();
+        }
+        public static IRepo<Log, int, Log> LogDataAccess()
+        {
+            return new LogRepo();
+        }
+        public static IRepo<ShippingAddress, int, ShippingAddress> ShoppingDataAccess()
+        {
+            return new ShippingAddressRepo();
+        }
 
         public static IRepo<Organizer, int, Organizer> OrganizerDataAccess()
         {
@@ -29,6 +41,11 @@ namespace DAL
         public static IRepo<Location, int, Location> LocationDataAccess()
         {
             return new LocationRepo();
+        }
+
+        public static IRepo<Token, string, Token> TokenDataAccess()
+        {
+            return new TokenRepo();
         }
 
         public static IRepo<Customer, int, Customer> CustomerDataAccess()
