@@ -12,7 +12,7 @@ namespace BLL.Services
 {
     public class ActionListService
     {
-        public static ActionListDTO AddAdmin(ActionListDTO action)
+        public static ActionListDTO AddActionList(ActionListDTO action)
         {
             var cfg = new MapperConfiguration(c => {
                 c.CreateMap<ActionListDTO, ActionList>();
@@ -28,51 +28,51 @@ namespace BLL.Services
             return null;
         }
 
-        public static List<AdminDTO> Get()
+        public static List<ActionListDTO> Get()
         {
-            var data = DataAccessFactory.AdminDataAccess().Get();
+            var data = DataAccessFactory.ActionListDataAccess().Get();
             var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Admin, AdminDTO>();
+                c.CreateMap<ActionList, ActionListDTO>();
             });
             var mapper = new Mapper(cfg);
-            return mapper.Map<List<AdminDTO>>(data);
+            return mapper.Map<List<ActionListDTO>>(data);
         }
-        public static AdminDTO Get(int id)
+        public static ActionListDTO Get(int id)
         {
-            var data = DataAccessFactory.AdminDataAccess().Get(id);
+            var data = DataAccessFactory.ActionListDataAccess().Get(id);
             var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Admin, AdminDTO>();
+                c.CreateMap<ActionList, ActionListDTO>();
             });
             var mapper = new Mapper(cfg);
-            return mapper.Map<AdminDTO>(data);
+            return mapper.Map<ActionListDTO>(data);
         }
 
 
-        public static AdminDTO Update(AdminDTO admin)
+        public static ActionListDTO Update(ActionListDTO action)
         {
 
             var cfg = new MapperConfiguration(c => {
-                c.CreateMap<AdminDTO, Admin>();
-                c.CreateMap<Admin, AdminDTO>();
+                c.CreateMap<ActionListDTO, ActionList>();
+                c.CreateMap<ActionList, ActionListDTO>();
             });
             var mapper = new Mapper(cfg);
-            var data = mapper.Map<Admin>(admin);
-            var rt = DataAccessFactory.AdminDataAccess().Update(data);
+            var data = mapper.Map<ActionList>(action);
+            var rt = DataAccessFactory.ActionListDataAccess().Update(data);
             if (rt != null)
             {
-                return mapper.Map<AdminDTO>(rt);
+                return mapper.Map<ActionListDTO>(rt);
             }
             return null;
         }
 
-        public static AdminDTO Delete(int id)
+        public static ActionListDTO Delete(int id)
         {
-            var data = DataAccessFactory.AdminDataAccess().Delete(id);
+            var data = DataAccessFactory.ActionListDataAccess().Delete(id);
             var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Admin, AdminDTO>();
+                c.CreateMap<ActionList, ActionListDTO>();
             });
             var mapper = new Mapper(cfg);
-            return mapper.Map<AdminDTO>(data);
+            return mapper.Map<ActionListDTO>(data);
         }
     }
 }
