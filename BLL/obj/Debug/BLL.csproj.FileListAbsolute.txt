@@ -14,3 +14,7 @@ D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online
 D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\BLL\obj\Debug\BLL.dll
 D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\BLL\obj\Debug\BLL.pdb
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\BLL\obj\Debug\BLL.dll
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\BLL\obj\Debug\BLL.pdb

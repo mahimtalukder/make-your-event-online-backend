@@ -1,0 +1,8 @@
+/.vs
+/ApplicationLayer/bin
+/ApplicationLayer/obj
+/BLL/bin
+/BLL/obj
+/DAL/bin
+/DAL/obj
+/ApplicationLayer/Web.config
