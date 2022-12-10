@@ -19,6 +19,14 @@ namespace DAL
         {
             return new ActionListRepo();
         }
+        public static IRepo<Log, int, Log> LogDataAccess()
+        {
+            return new LogRepo();
+        }
+        public static IRepo<ShippingAddress, int, ShippingAddress> ShoppingDataAccess()
+        {
+            return new ShippingAddressRepo();
+        }
 
         public static IRepo<Organizer, int, Organizer> OrganizerDataAccess()
         {
