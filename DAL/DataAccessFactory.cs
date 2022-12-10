@@ -15,9 +15,5 @@ namespace DAL
         {
             return new AdminRepo();
         }
-        public static IRepo<ActionList, int, ActionList> ActionListDataAccess()
-        {
-            return new ActionListRepo();
-        }
     }
 }

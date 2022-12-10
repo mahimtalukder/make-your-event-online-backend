@@ -18,12 +18,12 @@ namespace DAL.Repo
             return null;
         }
 
-        public bool Delete(int id)
+        public Admin Delete(int id)
         {
             var admin = Get(id);
             db.Admins.Remove(admin);
-            if (db.SaveChanges()>0) return true;
-            return false;
+            db.SaveChanges();
+            return null;
         }
 
         public List<Admin> Get()

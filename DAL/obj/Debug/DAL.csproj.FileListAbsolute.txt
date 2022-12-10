@@ -46,3 +46,9 @@ D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online
 D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.dll
 D:\Classwork\10th Semester\.Net Programming\Git - Project\make-your-event-online-backend\DAL\obj\Debug\DAL.pdb
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\DAL\obj\Debug\DAL.Migrations.TableWithRelations.resources
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\DAL\obj\Debug\DAL.dll
+C:\MyCodeBase\.Net_Project\make-your-event-online-backend\DAL\obj\Debug\DAL.pdb
