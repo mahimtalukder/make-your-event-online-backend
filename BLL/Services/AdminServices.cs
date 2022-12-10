@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AutoMapper;
+using BLL.DTOs;
+using DAL;
+using DAL.EF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +12,18 @@ namespace BLL.Services
 {
     public class AdminServices
     {
-        public static UserDTO AddUser(UserDTO user)
+        public static AdminDTO AddAdmin(AdminDTO admin)
         {
             var cfg = new MapperConfiguration(c => {
-                c.CreateMap<UserDTO, User>();
-                c.CreateMap<User, UserDTO>();
+                c.CreateMap<AdminDTO, Admin>();
+                c.CreateMap<Admin, AdminDTO>();
             });
             var mapper = new Mapper(cfg);
-            var data = mapper.Map<User>(user);
-            var rt = DataAccessFactory.UserDataAccess().Add(data);
+            var data = mapper.Map<Admin>(admin);
+            var rt = DataAccessFactory.AdminDataAccess().Add(data);
             if (rt != null)
             {
-                return mapper.Map<UserDTO>(rt);
+                return mapper.Map<AdminDTO>(rt);
             }
             return null;
         }

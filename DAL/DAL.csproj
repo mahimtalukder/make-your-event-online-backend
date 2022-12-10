@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataAccessFactory.cs" />
     <Compile Include="EF\Models\ActionList.cs" />
     <Compile Include="EF\Models\Admin.cs" />
     <Compile Include="EF\Models\Category.cs" />

@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class ActionLIstDTOs
+    public class AdminDTO
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
+
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public string ProfilePicture { get; set; }
     }
 }
