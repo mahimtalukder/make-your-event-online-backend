@@ -8,5 +8,10 @@ namespace BLL.DTOs
 {
     internal class OrderWithDetailDTO
     {
+        public virtual List<OrderDetailDTO> OrderDetails { get; set; }
+        public OrderWithDetailDTO()
+        {
+            OrderDetails = new List<OrderDetailDTO>();
+        }
     }
 }

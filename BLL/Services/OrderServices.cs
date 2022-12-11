@@ -61,7 +61,7 @@ namespace BLL.Services
             return mapper.Map<OrderDTO>(ret);
         }
 
-        public static OrderWithDetailDTO GetwithRoom(int id)
+        public static OrderWithDetailDTO GetWithDetail(int id)
         {
             var data = DataAccessFactory.OrderDataAccess().Get(id);
             var cfg = new MapperConfiguration(c => {
