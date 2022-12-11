@@ -15,25 +15,24 @@ namespace BLL.Services
             var CustomerList = CustomerServices.Get();
             var CustomerUserList = new List<UserCustomerDTO>();
 
-            var CustomerUsers = UserList.Zip(CustomerList, (U, C) => new { User = U, Customer = C });
 
-            foreach (var obj in CustomerList)
+            foreach (var Customer in CustomerList)
             {
-                var user = (from u in UserList
-                            where u.Id == obj.Id
+                var User = (from u in UserList
+                            where u.Id == Customer.Id
                             select u).SingleOrDefault();
                 CustomerUserList.Add(new UserCustomerDTO
                 {
-                    Id = user.Id,
-                    Username = obj.User.Username,
-                    Password = obj.User.Password,
-                    UserType = obj.User.UserType,
-                    Name = obj.Customer.Name,
-                    Email = obj.Customer.Email,
-                    Phone = obj.Customer.Phone,
-                    Address = obj.Customer.Address,
-                    ProfilePicture = obj.Customer.ProfilePicture,
-                    ShippingAreaId = obj.Customer.ShippingAreaId
+                    Id = User.Id,
+                    Username = User.Username,
+                    Password = User.Password,
+                    UserType = User.UserType,
+                    Name = Customer.Name,
+                    Email = Customer.Email,
+                    Phone = Customer.Phone,
+                    Address = Customer.Address,
+                    ProfilePicture = Customer.ProfilePicture,
+                    ShippingAreaId = Customer.ShippingAreaId
                 });
             }
             if(CustomerList != null) return CustomerUserList;
