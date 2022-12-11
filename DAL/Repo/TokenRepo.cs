@@ -8,31 +8,41 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    internal class TokenRepo : Repo, IRepo<Token, string, Token>
+    internal class TokenRepo: Repo, IRepo<Token, string, Token>
     {
         public Token Add(Token obj)
         {
-            throw new NotImplementedException();
+            db.Tokens.Add(obj);
+            if (db.SaveChanges() > 0)
+            { return obj; }
+            return null;
         }
 
         public bool Delete(string id)
         {
-            throw new NotImplementedException();
+            var token = Get(id);
+            db.Tokens.Remove(token);
+            if (db.SaveChanges() > 0) return true;
+            return false;
         }
 
         public List<Token> Get()
         {
-            throw new NotImplementedException();
+            return db.Tokens.ToList();
         }
 
         public Token Get(string id)
         {
-            throw new NotImplementedException();
+
+            return null;
         }
 
         public Token Update(Token obj)
         {
-            throw new NotImplementedException();
+            var token = Get(obj.LoginToken);
+            db.Entry(token).CurrentValues.SetValues(obj);
+            if (db.SaveChanges() > 0) return obj;
+            return obj;
         }
     }
 }

@@ -47,11 +47,6 @@ namespace DAL
             return new LocationRepo();
         }
 
-        public static IRepo<Token, string, Token> TokenDataAccess()
-        {
-            return new TokenRepo();
-        }
-
         public static IRepo<Customer, int, Customer> CustomerDataAccess()
         {
             return new CustomerRepo();
@@ -71,6 +66,10 @@ namespace DAL
         public static IAuth AuthDataAccess()
         {
             return new UserRepo();
+        }
+        public static IRepo<Token, string, Token> TokenDataAccess()
+        {
+            return new TokenRepo();
         }
     }
 }
