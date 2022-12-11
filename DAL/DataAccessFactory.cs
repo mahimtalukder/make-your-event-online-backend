@@ -23,7 +23,7 @@ namespace DAL
         {
             return new LogRepo();
         }
-        public static IRepo<ShippingAddress, int, ShippingAddress> ShoppingDataAccess()
+        public static IRepo<ShippingAddress, int, ShippingAddress> ShippingAddressDataAccess()
         {
             return new ShippingAddressRepo();
         }
