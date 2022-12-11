@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class AdminService
+    public class AdminServices
     {
         public static AdminDTO AddAdmin(AdminDTO admin)
         {

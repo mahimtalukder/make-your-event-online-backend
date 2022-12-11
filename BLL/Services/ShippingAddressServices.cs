@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class ShippingAddressService
+    public class ShippingAddressServices
     {
         public static ShippingAddressDTO AddShippingAddress(ShippingAddressDTO ShippingAddress)
         {

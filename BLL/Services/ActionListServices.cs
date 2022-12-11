@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class ActionListService
+    public class ActionListServices
     {
         public static ActionListDTO AddActionList(ActionListDTO action)
         {
