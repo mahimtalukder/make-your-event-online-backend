@@ -37,7 +37,7 @@ namespace BLL.Services
             var config = new MapperConfiguration(c => {
                 c.CreateMap<LocationDTO, Location>();
                 c.CreateMap<Location, LocationDTO>();
-                c.CreateMap<Log, LogDTO>();
+                c.CreateMap<LogDTO, Log>();
             });
             var mapper = new Mapper(config);
             var dbobj = mapper.Map<Location>(data);

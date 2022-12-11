@@ -15,22 +15,23 @@ namespace BLL.Services
         public static TokenDTO Authenticate(string Username, string Password)
         {
             var user = DataAccessFactory.AuthDataAccess().Authenticate(Username, Password);
-        
+            var cfg = new MapperConfiguration(c => {
+                c.CreateMap<Token, TokenDTO>();
+                c.CreateMap<LogDTO, Log>();
+            });
+            var mapper = new Mapper(cfg);
+
             if (user != null)
             {
 
-                if(user.UserType == "organizer")
+                if (user.UserType == "organizer")
                 {
-                    var log = new LogDTO()
+                    var log = new Log()
                     {
                         ActionId = 3,
                         CreateTime = DateTime.Now,
                         UserId = user.Id
                     };
-                    var cfglog = new MapperConfiguration(c => {
-                        c.CreateMap<Log, LogDTO>();
-                    });
-                    var mapper = new Mapper(cfglog);
                     DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
                 }
 
@@ -42,10 +43,6 @@ namespace BLL.Services
                 var rttk = DataAccessFactory.TokenDataAccess().Add(tk);
                 if (rttk != null)
                 {
-                    var cfg = new MapperConfiguration(c => {
-                        c.CreateMap<Token, TokenDTO>();
-                    });
-                    var mapper = new Mapper(cfg);
                     var data = mapper.Map<TokenDTO>(rttk);
                     return data;
                 }

@@ -71,7 +71,7 @@ namespace BLL.Services
                 c.CreateMap<UserDTO, User>();
                 c.CreateMap<User, UserDTO>();
                 c.CreateMap<OrganizerDTO, Organizer>();
-                c.CreateMap<Log, LogDTO>();
+                c.CreateMap<LogDTO, Log>();
             });
             var mapper = new Mapper(config);
             var user = new UserDTO()
@@ -114,7 +114,7 @@ namespace BLL.Services
                     {
                         ActionId = 6,
                         CreateTime = DateTime.Now,
-                        UserId = user.Id
+                        UserId = dbuser.Id
                     };
                     DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
 
