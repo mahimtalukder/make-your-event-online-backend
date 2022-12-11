@@ -56,6 +56,10 @@ namespace DAL
         {
             return new OrderRepo();
         }
+        public static IRepo<OrderDetail, int, OrderDetail> OrderDetailDataAccess()
+        {
+            return new OrderDetailRepo();
+        }
         public static IRepo<User, int, User> UserDataAccess()
         {
             return new UserRepo();
