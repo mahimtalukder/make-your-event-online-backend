@@ -19,12 +19,15 @@
         {
             List<ActionList> list = new List<ActionList>();
 
-            list.Add(new ActionList()
-            {
-                Id = 1,
-                Name = "AdminLogin",
+            string[] actions = new string[] { "AdminLogin", };
 
-            });
+            for (int i = 0; i <= actions.Length - 1; i++)
+            {
+                list.Add(new ActionList()
+                {
+                    Name = actions[i]
+                });
+            }
 
             context.ActionLists.AddOrUpdate(list.ToArray());
 
