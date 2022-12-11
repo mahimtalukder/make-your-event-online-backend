@@ -7,12 +7,27 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
     using System.Runtime.InteropServices;
+    using System.Xml.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DAL.EF.OrganizeYourEventContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+        }
+        protected override void Seed(DAL.EF.OrganizeYourEventContext context)
+        {
+            List<ActionList> list = new List<ActionList>();
+
+            list.Add(new ActionList()
+            {
+                Id = 1,
+                Name = "AdminLogin",
+
+            });
+
+            context.ActionLists.AddOrUpdate(list.ToArray());
+
         }
 
         protected override void Seed(DAL.EF.OrganizeYourEventContext context)

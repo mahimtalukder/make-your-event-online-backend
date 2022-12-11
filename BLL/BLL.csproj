@@ -49,6 +49,7 @@
     <Compile Include="DTOs\ActionLIstDTO.cs" />
     <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\CustomerDTO.cs" />
+    <Compile Include="DTOs\UserAdminDTO.cs" />
     <Compile Include="DTOs\UserCustomerDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\LogDTO.cs" />
