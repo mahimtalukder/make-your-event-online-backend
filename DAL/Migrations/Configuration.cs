@@ -7,6 +7,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
     using System.Runtime.InteropServices;
+    using System.Xml.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DAL.EF.OrganizeYourEventContext>
     {
@@ -14,14 +15,24 @@
         {
             AutomaticMigrationsEnabled = false;
         }
-
         protected override void Seed(DAL.EF.OrganizeYourEventContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            List<ActionList> list = new List<ActionList>();
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data
+            string[] actions = new string[] { "AdminLogin","CustomerLogin","OrganizationLogin","CreateAdmin", "CreateCUstomer","CreateOrganization","EditAdmin","EditCostomer","EditOrganization","DeleteAdmin","DeleteCostomer","DeleteOrganization" };
+
+            for (int i = 0; i <= actions.Length - 1; i++)
+            {
+                list.Add(new ActionList()
+                {
+                    Name = actions[i]
+                });
+            }
+
+            context.ActionLists.AddOrUpdate(list.ToArray());
 
         }
+
+
     }
 }
