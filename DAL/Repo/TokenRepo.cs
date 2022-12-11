@@ -34,7 +34,9 @@ namespace DAL.Repo
         public Token Get(string id)
         {
 
-            return null;
+            return (from tk in db.Tokens
+                    where tk.LoginToken == id
+                    select tk).SingleOrDefault();
         }
 
         public Token Update(Token obj)

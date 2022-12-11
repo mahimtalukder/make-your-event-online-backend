@@ -32,6 +32,16 @@ namespace BLL.Services
             return mapper.Map<UserDTO>(data);
         }
 
+        public static UserDTO GetByUsername(string username)
+        {
+            var data = DataAccessFactory.AuthDataAccess().GetUser(username);
+            var config = new MapperConfiguration(c => {
+                c.CreateMap<User, UserDTO>();
+            });
+            var mapper = new Mapper(config);
+            return mapper.Map<UserDTO>(data);
+        }
+
         public static UserDTO Add(UserDTO data)
         {
             var config = new MapperConfiguration(c => {

@@ -33,7 +33,7 @@ namespace ApplicationLayer.Controllers
 
         [Route("api/organizer/get")]
         [HttpGet]
-        [IsLogged]
+        [OrganizationLogin]
         public HttpResponseMessage Get()
         {
             try
@@ -65,7 +65,7 @@ namespace ApplicationLayer.Controllers
 
         [Route("api/organizer/update")]
         [HttpPost]
-        [IsLogged]
+        [OrganizationLogin]
         public HttpResponseMessage Update(UserOrganizerDTO organizerDTO)
         {
             try
@@ -81,7 +81,7 @@ namespace ApplicationLayer.Controllers
 
         [Route("api/organizer/delete/{id}")]
         [HttpGet]
-        [IsLogged]
+        [OrganizationLogin]
         public HttpResponseMessage Delete(int ID)
         {
             try

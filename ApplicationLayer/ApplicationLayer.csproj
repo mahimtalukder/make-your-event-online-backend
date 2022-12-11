@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Auth\IsLogged.cs" />
+    <Compile Include="Auth\OrganizationLogin.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\OrganizerController.cs" />

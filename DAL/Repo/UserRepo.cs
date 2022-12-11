@@ -51,6 +51,12 @@ namespace DAL.Repo
             return null;
         }
 
+        public User GetUser(string Username)
+        {
+            var obj = db.Users.FirstOrDefault(x => x.Username.Equals(Username));
+            return obj;
+        }
+
         public User Update(User obj)
         {
             var DBUser = Get(obj.Id);
