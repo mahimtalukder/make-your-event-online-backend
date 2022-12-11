@@ -11,7 +11,9 @@ namespace BLL.DTOs
     public class LogDTO
     {
         public int Id { get; set; }
+        [Required]
         public int ActionId { get; set; }
+        [Required]
         public DateTime CreateTime { get; set; }
         public int? UserId { get; set; }
     }
