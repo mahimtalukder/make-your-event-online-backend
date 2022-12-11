@@ -17,11 +17,14 @@ namespace BLL.Services
 
             var CustomerUsers = UserList.Zip(CustomerList, (U, C) => new { User = U, Customer = C });
 
-            foreach (var obj in CustomerUsers)
+            foreach (var obj in CustomerList)
             {
+                var user = (from u in UserList
+                            where u.Id == obj.Id
+                            select u).SingleOrDefault();
                 CustomerUserList.Add(new UserCustomerDTO
                 {
-                    Id = obj.User.Id,
+                    Id = user.Id,
                     Username = obj.User.Username,
                     Password = obj.User.Password,
                     UserType = obj.User.UserType,

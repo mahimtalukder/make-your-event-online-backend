@@ -34,20 +34,60 @@ namespace BLL.Services
             return rt;
         }
 
-        public static OrganizerDTO Add(OrganizerDTO user)
+        public static UserOrganizerDTO Add(UserOrganizerDTO OrganizerData)
         {
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<OrganizerDTO, Organizer>();
-                cfg.CreateMap<Organizer, OrganizerDTO>();
+            var config = new MapperConfiguration(c => {
+                c.CreateMap<UserDTO, User>();
+                c.CreateMap<User, UserDTO>();
+                c.CreateMap<OrganizerDTO, Organizer>();
             });
             var mapper = new Mapper(config);
-            var dbOrganizer = mapper.Map<Organizer>(user);
-            var rt = DataAccessFactory.OrganizerDataAccess().Add(dbOrganizer);
-            if (rt != null)
+            var user = new UserDTO()
             {
-                return mapper.Map<OrganizerDTO>(rt);
+                Username = OrganizerData.Username,
+                Password = OrganizerData.Password,
+                UserType = OrganizerData.UserType,
+            };
+            var dbuser = DataAccessFactory.UserDataAccess().Add(mapper.Map<User>(user));
+
+            if(dbuser != null)
+            {
+                var organizer = new OrganizerDTO()
+                {
+                    Id = dbuser.Id,
+                    Name = OrganizerData.Name,
+                    Email = OrganizerData.Email,
+                    Phone = OrganizerData.Phone,
+                    Address = OrganizerData.Address,
+                    ProfilePicture = OrganizerData.ProfilePicture,
+                };
+                var dbornizer = DataAccessFactory.OrganizerDataAccess().Add(mapper.Map<Organizer>(organizer));
+
+                if (dbuser != null)
+                {
+                    UserOrganizerDTO data = new UserOrganizerDTO()
+                    {
+                        Id = dbuser.Id,
+                        Username = dbuser.Username,
+                        Password = dbuser.Password,
+                        UserType = dbuser.UserType,
+                        Name = organizer.Name,
+                        Email = organizer.Email,
+                        Phone = organizer.Phone,
+                        Address = organizer.Address,
+                        ProfilePicture = organizer.ProfilePicture,
+                    };
+                    return data;
+                }
+                return null;
+
+               
             }
             return null;
+
+
+           
+
         }
 
         public static OrganizerDTO Update(OrganizerDTO user)
