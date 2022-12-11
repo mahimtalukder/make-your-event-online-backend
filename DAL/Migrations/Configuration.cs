@@ -17,19 +17,19 @@
         }
         protected override void Seed(DAL.EF.OrganizeYourEventContext context)
         {
-            List<ActionList> list = new List<ActionList>();
+            List<ActionList> actionlist = new List<ActionList>();
 
             string[] actions = new string[] { "AdminLogin","CustomerLogin","OrganizationLogin","CreateAdmin", "CreateCUstomer","CreateOrganization","EditAdmin","EditCostomer","EditOrganization","DeleteAdmin","DeleteCostomer","DeleteOrganization" };
 
             for (int i = 0; i <= actions.Length - 1; i++)
             {
-                list.Add(new ActionList()
+                actionlist.Add(new ActionList()
                 {
                     Name = actions[i]
                 });
             }
 
-            context.ActionLists.AddOrUpdate(list.ToArray());
+            context.ActionLists.AddOrUpdate(actionlist.ToArray());
 
         }
 
