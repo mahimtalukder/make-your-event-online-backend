@@ -79,6 +79,10 @@
     <Compile Include="Migrations\202212101619140_AddTokenTable.designer.cs">
       <DependentUpon>202212101619140_AddTokenTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212112123460_updatedTable.cs" />
+    <Compile Include="Migrations\202212112123460_updatedTable.designer.cs">
+      <DependentUpon>202212112123460_updatedTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\ActionListRepo.cs" />
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212101619140_AddTokenTable.resx">
       <DependentUpon>202212101619140_AddTokenTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212112123460_updatedTable.resx">
+      <DependentUpon>202212112123460_updatedTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
