@@ -63,12 +63,12 @@
     <Compile Include="DTOs\UserOrganizerDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CustomerServices.cs" />
-    <Compile Include="Services\ActionListService.cs" />
-    <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\ActionListServices.cs" />
+    <Compile Include="Services\AdminServices.cs" />
     <Compile Include="Services\CustomerUserServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\OrganizerServices.cs" />
-    <Compile Include="Services\ShippingAddressService.cs" />
+    <Compile Include="Services\ShippingAddressServices.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
