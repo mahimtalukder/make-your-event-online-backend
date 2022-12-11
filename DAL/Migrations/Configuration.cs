@@ -19,7 +19,7 @@
         {
             List<ActionList> list = new List<ActionList>();
 
-            string[] actions = new string[] { "AdminLogin","CustomerLogin","OrganizationLogin","CreateAdmin", "CreateCUstomer","CreateOrganization","EditAdmin","EditCostomer","EditOrganization","DeleteAdmin","deleteCostomer","DeleteOrganization" };
+            string[] actions = new string[] { "AdminLogin","CustomerLogin","OrganizationLogin","CreateAdmin", "CreateCUstomer","CreateOrganization","EditAdmin","EditCostomer","EditOrganization","DeleteAdmin","DeleteCostomer","DeleteOrganization" };
 
             for (int i = 0; i <= actions.Length - 1; i++)
             {
