@@ -69,6 +69,7 @@
     <Compile Include="EF\Models\Token.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="EF\OrganizeYourEventContext.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202212091342055_TableWithRelations.cs" />
     <Compile Include="Migrations\202212091342055_TableWithRelations.designer.cs">

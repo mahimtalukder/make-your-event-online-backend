@@ -12,26 +12,57 @@ namespace BLL.Services
 {
     public class OrganizerServices
     {
-        public static List<OrganizerDTO> Get()
+        public static List<UserOrganizerDTO> Get()
         {
-            var data = DataAccessFactory.OrganizerDataAccess().Get();
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<Organizer, OrganizerDTO>();
-            });
-            var mapper = new Mapper(config);
-            var rt = mapper.Map<List<OrganizerDTO>>(data);
-            return rt;
+            var UserList = UserServices.Get();
+            var OrganizerList = DataAccessFactory.OrganizerDataAccess().Get();
+            var UserOrganizerList = new List<UserOrganizerDTO>();
+
+
+            foreach (var Organizer in OrganizerList)
+            {
+                var User = (from u in UserList
+                            where u.Id == Organizer.Id
+                            select u).SingleOrDefault();
+
+                UserOrganizerList.Add(new UserOrganizerDTO
+                {
+                    Id = User.Id,
+                    Username = User.Username,
+                    Password = User.Password,
+                    UserType = User.UserType,
+                    Name = Organizer.Name,
+                    Email = Organizer.Email,
+                    Phone = Organizer.Phone,
+                    Address = Organizer.Address,
+                    ProfilePicture = Organizer.ProfilePicture,
+                });
+            }
+            return UserOrganizerList;
         }
 
-        public static OrganizerDTO Get(int id)
+        public static UserOrganizerDTO Get(int id)
         {
-            var data = DataAccessFactory.OrganizerDataAccess().Get(id);
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<Organizer, OrganizerDTO>();
-            });
-            var mapper = new Mapper(config);
-            var rt = mapper.Map<OrganizerDTO>(data);
-            return rt;
+            var User = UserServices.Get(id);
+            var Organizer = DataAccessFactory.OrganizerDataAccess().Get(id);
+
+            if (User != null && Organizer != null)
+            {
+                var OrganizerUser = new UserOrganizerDTO
+                {
+                    Id = User.Id,
+                    Username = User.Username,
+                    Password = User.Password,
+                    UserType = User.UserType,
+                    Name = Organizer.Name,
+                    Email = Organizer.Email,
+                    Phone = Organizer.Phone,
+                    Address = Organizer.Address,
+                    ProfilePicture = Organizer.ProfilePicture
+                };
+                return OrganizerUser;
+            }
+            return null;
         }
 
         public static UserOrganizerDTO Add(UserOrganizerDTO OrganizerData)
@@ -90,25 +121,54 @@ namespace BLL.Services
 
         }
 
-        public static OrganizerDTO Update(OrganizerDTO user)
+        public static UserOrganizerDTO Update(UserOrganizerDTO organizerUser)
         {
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<OrganizerDTO, Organizer>();
-                cfg.CreateMap<Organizer, OrganizerDTO>();
-            });
-            var mapper = new Mapper(config);
-            var organizer = mapper.Map<Organizer>(user);
-            var rt = DataAccessFactory.OrganizerDataAccess().Update(organizer);
-            if (rt != null)
+            var User = new UserDTO()
             {
-                return mapper.Map<OrganizerDTO>(rt);
+                Id = organizerUser.Id,
+                Username = organizerUser.Username,
+                UserType = organizerUser.UserType,
+            };
+
+            var Organizer = new OrganizerDTO()
+            {
+                Id = organizerUser.Id,
+                Name = organizerUser.Name,
+                Email = organizerUser.Email,
+                Phone = organizerUser.Phone,
+                Address = organizerUser.Address,
+                ProfilePicture = organizerUser.ProfilePicture
+
+            };
+            if (User != null && Organizer != null)
+            {
+                var NewOrganizerUser = new UserOrganizerDTO()
+                {
+                    Id = User.Id,
+                    Username = User.Username,
+                    Password = User.Password,
+                    UserType = User.UserType,
+                    Name = Organizer.Name,
+                    Email = Organizer.Email,
+                    Phone = Organizer.Phone,
+                    Address = Organizer.Address,
+                    ProfilePicture = Organizer.ProfilePicture,
+                };
+                return NewOrganizerUser;
             }
             return null;
         }
 
         public static bool Delete(int Id)
         {
-            return DataAccessFactory.OrganizerDataAccess().Delete(Id);
+            if (DataAccessFactory.OrganizerDataAccess().Delete(Id))
+            {
+                if (DataAccessFactory.UserDataAccess().Delete(Id))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
