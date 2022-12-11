@@ -114,9 +114,11 @@ namespace BLL.Services
 
         public static bool Delete(int id)
         {
-            if (!CustomerServices.Delete(id)) return false;
-            if (!UserServices.Delete(id)) return false;
-            return true;
+            if (CustomerServices.Delete(id))
+            {
+                if (UserServices.Delete(id)) return true;
+            }
+            return false;
         }
 
     }
