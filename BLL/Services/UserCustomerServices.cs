@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class CustomerUserServices
+    public class UserCustomerServices
     {
-        public static List<CustomerUserDTO> Get()
+        public static List<UserCustomerDTO> Get()
         {
             var UserList = UserServices.Get();
             var CustomerList = CustomerServices.Get();
-            var CustomerUserList = new List<CustomerUserDTO>();
+            var CustomerUserList = new List<UserCustomerDTO>();
 
             var CustomerUsers = UserList.Zip(CustomerList, (U, C) => new { User = U, Customer = C });
 
             foreach (var obj in CustomerUsers)
             {
-                CustomerUserList.Add(new CustomerUserDTO
+                CustomerUserList.Add(new UserCustomerDTO
                 {
                     Id = obj.User.Id,
                     Username = obj.User.Username,
@@ -30,22 +30,21 @@ namespace BLL.Services
                     Phone = obj.Customer.Phone,
                     Address = obj.Customer.Address,
                     ProfilePicture = obj.Customer.ProfilePicture,
-                    ShippingAreaId = obj.Customer.ShippingAreaId,
-
+                    ShippingAreaId = obj.Customer.ShippingAreaId
                 });
             }
             if(CustomerList != null) return CustomerUserList;
             return null;
         }
 
-        public static CustomerUserDTO Get(int id)
+        public static UserCustomerDTO Get(int id)
         {
             var User = UserServices.Get(id);
             var Customer = CustomerServices.Get(id);
 
             if(User != null && Customer != null)
             {
-                var CustomerUser = new CustomerUserDTO
+                var CustomerUser = new UserCustomerDTO
                 {
                     Id = User.Id,
                     Username = User.Username,
@@ -63,13 +62,13 @@ namespace BLL.Services
             return null;
         }
 
-        public static CustomerUserDTO Add(CustomerUserDTO CustomerUser)
+        public static UserCustomerDTO Add(UserCustomerDTO CustomerUser)
         {
             var User = UserServices.Add(new UserDTO { Password = CustomerUser.Password, Username = CustomerUser.Username, UserType = CustomerUser.UserType });
             var Customer = CustomerServices.Add(new CustomerDTO { Id = User.Id, Name = CustomerUser.Name, Email = CustomerUser.Email, Phone = CustomerUser.Phone, Address = CustomerUser.Address, ProfilePicture = CustomerUser.ProfilePicture, ShippingAreaId = CustomerUser.ShippingAreaId });
             if (User != null && Customer != null)
             {
-                var NewCustomerUser = new CustomerUserDTO
+                var NewCustomerUser = new UserCustomerDTO
                 {
                     Id = User.Id,
                     Username = User.Username,
@@ -87,13 +86,13 @@ namespace BLL.Services
             return null;
         }
 
-        public static CustomerUserDTO Update(CustomerUserDTO CustomerUser)
+        public static UserCustomerDTO Update(UserCustomerDTO CustomerUser)
         {
             var User = UserServices.Update(new UserDTO {Id=CustomerUser.Id, Password = CustomerUser.Password, Username = CustomerUser.Username, UserType = CustomerUser.UserType });
             var Customer = CustomerServices.Update(new CustomerDTO { Id = User.Id, Name = CustomerUser.Name, Email = CustomerUser.Email, Phone = CustomerUser.Phone, Address = CustomerUser.Address, ProfilePicture = CustomerUser.ProfilePicture, ShippingAreaId = CustomerUser.ShippingAreaId });
             if (User != null && Customer != null)
             {
-                var NewCustomerUser = new CustomerUserDTO
+                var NewCustomerUser = new UserCustomerDTO
                 {
                     Id = User.Id,
                     Username = User.Username,

@@ -49,7 +49,7 @@
     <Compile Include="DTOs\ActionLIstDTO.cs" />
     <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\CustomerDTO.cs" />
-    <Compile Include="DTOs\CustomerUserDTO.cs" />
+    <Compile Include="DTOs\UserCustomerDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\LogDTO.cs" />
     <Compile Include="DTOs\OrderDetailDTO.cs" />
@@ -65,7 +65,7 @@
     <Compile Include="Services\CustomerServices.cs" />
     <Compile Include="Services\ActionListServices.cs" />
     <Compile Include="Services\AdminServices.cs" />
-    <Compile Include="Services\CustomerUserServices.cs" />
+    <Compile Include="Services\UserCustomerServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\OrganizerServices.cs" />
     <Compile Include="Services\ShippingAddressServices.cs" />
