@@ -49,6 +49,7 @@
     <Compile Include="DTOs\ActionLIstDTO.cs" />
     <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\CustomerDTO.cs" />
+    <Compile Include="DTOs\CustomerUserDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\LogDTO.cs" />
     <Compile Include="DTOs\OrderDTO.cs" />
@@ -63,8 +64,9 @@
     <Compile Include="Services\CustomerServices.cs" />
     <Compile Include="Services\ActionListService.cs" />
     <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\CustomerUserServices.cs" />
     <Compile Include="Services\OrganizerServices.cs" />
-    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

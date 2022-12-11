@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    internal class UserService
+    public class UserServices
     {
         public static List<UserDTO> Get()
         {
