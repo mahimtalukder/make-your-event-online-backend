@@ -64,6 +64,7 @@
     <Compile Include="Services\ActionListService.cs" />
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\OrganizerServices.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
