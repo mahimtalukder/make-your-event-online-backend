@@ -15,20 +15,51 @@ namespace ApplicationLayer.Controllers
         [HttpPost]
         public HttpResponseMessage Login(LoginDTO login)
         {
-            if (login == null)
+            try
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Username password not supplied");
-            }
-            if (ModelState.IsValid)
-            {
-                var token = AuthServices.Authenticate(login.Username, login.Password);
-                if (token != null)
+                if (login == null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, token);
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Username password not supplied");
                 }
-                return Request.CreateResponse(HttpStatusCode.NotFound, "Username password invalid");
+                if (ModelState.IsValid)
+                {
+                    var token = AuthServices.Authenticate(login.Username, login.Password);
+                    if (token != null)
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK, token);
+                    }
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Username password invalid");
+                }
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
-            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        }
+
+        [Route("api/logout")]
+        [HttpGet]
+        public HttpResponseMessage Logout()
+        {
+            var token = Request.Headers.Authorization.ToString();
+            try
+            {
+                var isLoggedOut = AuthServices.ExpToken(token);
+                if (isLoggedOut)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, isLoggedOut);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.Forbidden, isLoggedOut);
+                }
+         
+
+            }
+            catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
     }
 }
