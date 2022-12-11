@@ -23,6 +23,10 @@ namespace DAL
         {
             return new LogRepo();
         }
+        public static IRepo<Review, int, Review> ReviewDataAccess()
+        {
+            return new ReviewRepo();
+        }
         public static IRepo<ShippingAddress, int, ShippingAddress> ShippingAddressDataAccess()
         {
             return new ShippingAddressRepo();

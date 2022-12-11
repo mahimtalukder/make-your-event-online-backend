@@ -8,17 +8,18 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class ShippingAddressDTO
+    public class ReviewDTO
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(200)]
-        public string Address { get; set; }
+        public int Reating { get; set; }
         [Required]
-        [StringLength(50)]
-        public string Tag { get; set; }
+        [StringLength(100)]
+        public string Comment { get; set; }
         [Required]
-        public int LocationId { get; set; }
-        public int? CustomerId { get; set; }
+        public DateTime Date { get; set; }
+        [Required]
+        [ForeignKey("Customer")]
+        public int CustomerId { get; set; }
     }
 }

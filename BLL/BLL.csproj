@@ -57,6 +57,7 @@
     <Compile Include="DTOs\OrderWithDetailDTO.cs" />
     <Compile Include="DTOs\OrganizerDTO.cs" />
     <Compile Include="DTOs\OrganizingAreaDTO.cs" />
+    <Compile Include="DTOs\ReviewDTO.cs" />
     <Compile Include="DTOs\ShippingAddressDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Services\UserCustomerServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\OrganizerServices.cs" />
+    <Compile Include="Services\ReviewServices.cs" />
     <Compile Include="Services\ShippingAddressServices.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
