@@ -51,7 +51,6 @@ namespace DAL.Repo
             db.Entry(DBUser).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
-            throw new NotImplementedException();
         }
     }
 }

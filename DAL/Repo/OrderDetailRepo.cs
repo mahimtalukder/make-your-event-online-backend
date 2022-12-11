@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    internal class OrderRepo : Repo, IRepo<Order, int, Order>
+    internal class OrderDetailRepo : Repo, IRepo<OrderDetail, int, OrderDetail>
     {
-        public Order Add(Order obj)
+        public OrderDetail Add(OrderDetail obj)
         {
-            db.Orders.Add(obj);
+            db.OrderDetails.Add(obj);
             if (db.SaveChanges() > 0)
             {
                 return obj;
@@ -22,8 +22,8 @@ namespace DAL.Repo
 
         public bool Delete(int id)
         {
-            var DBOrder = Get(id);
-            db.Orders.Remove(DBOrder);
+            var DBOrderDetail = Get(id);
+            db.OrderDetails.Remove(DBOrderDetail);
             if (db.SaveChanges() > 0)
             {
                 return true;
@@ -31,25 +31,25 @@ namespace DAL.Repo
             return false;
         }
 
-        public List<Order> Get()
+        public List<OrderDetail> Get()
         {
-            return db.Orders.ToList();
+            return db.OrderDetails.ToList();
         }
 
-        public Order Get(int id)
+        public OrderDetail Get(int id)
         {
-            var DBOrder = db.Orders.SingleOrDefault(x => x.Id == id);
-            if (DBOrder != null)
+            var DBOrderDetail = db.OrderDetails.SingleOrDefault(x => x.Id == id);
+            if (DBOrderDetail != null)
             {
-                return DBOrder;
+                return DBOrderDetail;
             }
             return null;
         }
 
-        public Order Update(Order obj)
+        public OrderDetail Update(OrderDetail obj)
         {
-            var DBOrder = Get(obj.Id);
-            db.Entry(DBOrder).CurrentValues.SetValues(obj);
+            var DBOrderDetail = Get(obj.Id);
+            db.Entry(DBOrderDetail).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
             throw new NotImplementedException();

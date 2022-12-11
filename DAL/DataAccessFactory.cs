@@ -47,5 +47,22 @@ namespace DAL
         {
             return new TokenRepo();
         }
+
+        public static IRepo<Customer, int, Customer> CustomerDataAccess()
+        {
+            return new CustomerRepo();
+        }
+        public static IRepo<Order, int, Order> OrderDataAccess()
+        {
+            return new OrderRepo();
+        }
+        public static IRepo<OrderDetail, int, OrderDetail> OrderDetailDataAccess()
+        {
+            return new OrderDetailRepo();
+        }
+        public static IRepo<User, int, User> UserDataAccess()
+        {
+            return new UserRepo();
+        }
     }
 }

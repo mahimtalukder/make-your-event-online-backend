@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    internal class CustomerDTO
+    public class CustomerDTO
     {
         public int Id { get; set; }
         [Required]
