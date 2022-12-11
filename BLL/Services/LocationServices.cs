@@ -32,16 +32,29 @@ namespace BLL.Services
             return mapper.Map<LocationDTO>(data);
         }
 
-        public static LocationDTO Add(LocationDTO data)
+        public static LocationDTO Add(LocationDTO data, string Username)
         {
             var config = new MapperConfiguration(c => {
                 c.CreateMap<LocationDTO, Location>();
                 c.CreateMap<Location, LocationDTO>();
+                c.CreateMap<Log, LogDTO>();
             });
             var mapper = new Mapper(config);
             var dbobj = mapper.Map<Location>(data);
             var ret = DataAccessFactory.LocationDataAccess().Add(dbobj);
-            return mapper.Map<LocationDTO>(ret);
+            if(ret != null)
+            {
+                var user = UserServices.GetByUsername(Username);
+                var log = new LogDTO()
+                {
+                    ActionId = 13,
+                    CreateTime = DateTime.Now,
+                    UserId = user.Id
+                };
+                DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
+                return mapper.Map<LocationDTO>(ret);
+            }
+            return null;    
         }
 
         public static bool Delete(int id)

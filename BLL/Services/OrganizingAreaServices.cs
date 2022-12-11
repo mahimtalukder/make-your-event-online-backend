@@ -37,11 +37,23 @@ namespace BLL.Services
             var config = new MapperConfiguration(c => {
                 c.CreateMap<OrganizingAreaDTO, OrganizingArea>();
                 c.CreateMap<OrganizingArea, OrganizingAreaDTO>();
+                c.CreateMap<Log, LogDTO>();
             });
             var mapper = new Mapper(config);
             var dbobj = mapper.Map<OrganizingArea>(data);
             var ret = DataAccessFactory.OrganizingAreaDataAccess().Add(dbobj);
-            return mapper.Map<OrganizingAreaDTO>(ret);
+            if(ret != null)
+            {
+                var log = new LogDTO()
+                {
+                    ActionId = 14,
+                    CreateTime = DateTime.Now,
+                    UserId = ret.OrganizerId,
+                };
+                DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
+                return mapper.Map<OrganizingAreaDTO>(ret);
+            }
+            return null;
         }
 
         public static bool Delete(int id)
