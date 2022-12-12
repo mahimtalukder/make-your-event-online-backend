@@ -12,67 +12,157 @@ namespace BLL.Services
 {
     public class AdminServices
     {
-        public static AdminDTO AddAdmin(AdminDTO admin)
+        public static UserAdminDTO AddAdmin(UserAdminDTO admin)
         {
-            var cfg = new MapperConfiguration(c => {
+            var config = new MapperConfiguration(c => {
+                c.CreateMap<UserDTO, User>();
+                c.CreateMap<User, UserDTO>();
                 c.CreateMap<AdminDTO, Admin>();
-                c.CreateMap<Admin, AdminDTO>();
             });
-            var mapper = new Mapper(cfg);
-            var data = mapper.Map<Admin>(admin);
-            var rt = DataAccessFactory.AdminDataAccess().Add(data);
-            if (rt != null)
+            var mapper = new Mapper(config);
+            var user = new UserDTO()
             {
-                return mapper.Map<AdminDTO>(rt);
+                Username = admin.Username,
+                Password = admin.Password,
+                UserType = admin.UserType,
+            };
+            var dbuser = DataAccessFactory.UserDataAccess().Add(mapper.Map<User>(user));
+
+            if (dbuser != null)
+            {
+                var organizer = new OrganizerDTO()
+                {
+                    Id = dbuser.Id,
+                    Name = admin.Name,
+                    Email = admin.Email,
+                    Phone = admin.Phone,
+                    Address = admin.Address,
+                    ProfilePicture = admin.ProfilePicture,
+                };
+                var dbadmin = DataAccessFactory.AdminDataAccess().Add(mapper.Map<Admin>(admin));
+
+                if (dbuser != null)
+                {
+                    UserAdminDTO data = new UserAdminDTO()
+                    {
+                        Id = dbuser.Id,
+                        Username = dbuser.Username,
+                        Password = dbuser.Password,
+                        UserType = dbuser.UserType,
+                        Name = admin.Name,
+                        Email = admin.Email,
+                        Phone = admin.Phone,
+                        Address = admin.Address,
+                        ProfilePicture = admin.ProfilePicture,
+                    };
+                    return data;
+                }
+                return null;
+
+
+            }
+            return null;
+
+        }
+
+        public static List<UserAdminDTO> Get()
+        {
+            var UserList = UserServices.Get();
+            var adminList = DataAccessFactory.AdminDataAccess().Get();
+            var UserAdminList = new List<UserAdminDTO>();
+
+
+            foreach (var admin in adminList)
+            {
+                var User = (from u in UserList
+                            where u.Id == admin.Id
+                            select u).SingleOrDefault();
+
+                UserAdminList.Add(new UserAdminDTO
+                {
+                    Id = User.Id,
+                    Username = User.Username,
+                    Password = User.Password,
+                    UserType = User.UserType,
+                    Name = admin.Name,
+                    Email = admin.Email,
+                    Phone = admin.Phone,
+                    ProfilePicture = admin.ProfilePicture,
+                });
+            }
+            return UserAdminList;
+        }
+        public static UserAdminDTO Get(int id)
+        {
+            var User = UserServices.Get(id);
+            var admin = DataAccessFactory.AdminDataAccess().Get(id);
+
+            if (User != null && admin != null)
+            {
+                var adminUser = new UserAdminDTO
+                {
+                    Id = User.Id,
+                    Username = User.Username,
+                    Password = User.Password,
+                    UserType = User.UserType,
+                    Name = admin.Name,
+                    Email = admin.Email,
+                    Phone = admin.Phone,
+                    ProfilePicture = admin.ProfilePicture,
+                };
+                return adminUser;
             }
             return null;
         }
 
-        public static List<AdminDTO> Get()
-        {
-            var data = DataAccessFactory.AdminDataAccess().Get();
-            var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Admin, AdminDTO>();
-            });
-            var mapper = new Mapper(cfg);
-            return mapper.Map<List<AdminDTO>>(data);
-        }
-        public static AdminDTO Get(int id)
-        {
-            var data = DataAccessFactory.AdminDataAccess().Get(id);
-            var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Admin, AdminDTO>();
-            });
-            var mapper = new Mapper(cfg);
-            return mapper.Map<AdminDTO>(data);
-        }
 
-
-        public static AdminDTO Update(AdminDTO admin)
+        public static UserAdminDTO Update(UserAdminDTO Useradmin)
         {
 
-            var cfg = new MapperConfiguration(c => {
-                c.CreateMap<AdminDTO, Admin>();
-                c.CreateMap<Admin, AdminDTO>();
-            });
-            var mapper = new Mapper(cfg);
-            var data = mapper.Map<Admin>(admin);
-            var rt = DataAccessFactory.AdminDataAccess().Update(data);
-            if (rt != null)
+            var User = new UserDTO()
             {
-                return mapper.Map<AdminDTO>(rt);
+                Id = Useradmin.Id,
+                Username = Useradmin.Username,
+                UserType = Useradmin.UserType,
+            };
+
+            var admin = new AdminDTO()
+            {
+                Id = Useradmin.Id,
+                Name = Useradmin.Name,
+                Email = Useradmin.Email,
+                Phone = Useradmin.Phone,
+                ProfilePicture = Useradmin.ProfilePicture
+
+            };
+            if (User != null && admin != null)
+            {
+                var NewAdminUser = new UserAdminDTO()
+                {
+                    Id = User.Id,
+                    Username = User.Username,
+                    Password = User.Password,
+                    UserType = User.UserType,
+                    Name = admin.Name,
+                    Email = admin.Email,
+                    Phone = admin.Phone,
+                    ProfilePicture = admin.ProfilePicture,
+                };
+                return NewAdminUser;
             }
             return null;
         }
 
-        public static AdminDTO Delete(int id)
+        public static bool Delete(int Id)
         {
-            var data = DataAccessFactory.AdminDataAccess().Delete(id);
-            var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Admin, AdminDTO>();
-            });
-            var mapper = new Mapper(cfg);
-            return mapper.Map<AdminDTO>(data);
+            if (DataAccessFactory.AdminDataAccess().Delete(Id))
+            {
+                if (DataAccessFactory.UserDataAccess().Delete(Id))
+                {
+                    return true;
+                }
+            }
+            return false; ;
         }
 
 

@@ -65,14 +65,9 @@ namespace BLL.Services
             return null;
         }
 
-        public static ReviewDTO Delete(int id)
+        public static bool Delete(int id)
         {
-            var data = DataAccessFactory.ReviewDataAccess().Delete(id);
-            var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Review, ReviewDTO>();
-            });
-            var mapper = new Mapper(cfg);
-            return mapper.Map<ReviewDTO>(data);
+            return DataAccessFactory.ReviewDataAccess().Delete(id);
         }
     }
 }

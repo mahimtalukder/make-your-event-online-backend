@@ -65,14 +65,9 @@ namespace BLL.Services
             return null;
         }
 
-        public static ShippingAddressDTO Delete(int id)
+        public static bool Delete(int id)
         {
-            var data = DataAccessFactory.ShippingAddressDataAccess().Delete(id);
-            var cfg = new MapperConfiguration(c => {
-                c.CreateMap<ShippingAddress, ShippingAddressDTO>();
-            });
-            var mapper = new Mapper(cfg);
-            return mapper.Map<ShippingAddressDTO>(data);
+            return DataAccessFactory.ShippingAddressDataAccess().Delete(id);
         }
     }
 }
