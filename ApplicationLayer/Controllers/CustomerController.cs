@@ -33,7 +33,7 @@ namespace ApplicationLayer.Controllers
 
         [Route("api/customer/get")]
         [HttpGet]
-        [IsLogged]
+        [CustomerLogin]
         public HttpResponseMessage Get()
         {
             try
@@ -65,7 +65,7 @@ namespace ApplicationLayer.Controllers
 
         [Route("api/customer/update")]
         [HttpPost]
-        [IsLogged]
+        [CustomerLogin]
         public HttpResponseMessage Update(UserCustomerDTO User)
         {
             try
@@ -81,7 +81,7 @@ namespace ApplicationLayer.Controllers
 
         [Route("api/customer/delete/{id}")]
         [HttpGet]
-        [IsLogged]
+        [CustomerLogin]
         public HttpResponseMessage Delete(int ID)
         {
             try
