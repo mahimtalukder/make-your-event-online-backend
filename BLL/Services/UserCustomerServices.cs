@@ -1,4 +1,7 @@
-﻿using BLL.DTOs;
+﻿using AutoMapper;
+using BLL.DTOs;
+using DAL.EF.Models;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +69,12 @@ namespace BLL.Services
 
         public static UserCustomerDTO Add(UserCustomerDTO CustomerUser)
         {
+            var config = new MapperConfiguration(c => {
+                c.CreateMap<LogDTO, Log>();
+            });
+            var mapper = new Mapper(config);
+
+
             var User = UserServices.Add(new UserDTO { Password = CustomerUser.Password, Username = CustomerUser.Username, UserType = CustomerUser.UserType });
             var Customer = CustomerServices.Add(new CustomerDTO { Id = User.Id, Name = CustomerUser.Name, Email = CustomerUser.Email, Phone = CustomerUser.Phone, Address = CustomerUser.Address, ProfilePicture = CustomerUser.ProfilePicture, ShippingAreaId = CustomerUser.ShippingAreaId });
             if (User != null && Customer != null)
@@ -83,6 +92,15 @@ namespace BLL.Services
                     ProfilePicture = Customer.ProfilePicture,
                     ShippingAreaId = Customer.ShippingAreaId,
                 };
+
+                var log = new LogDTO()
+                {
+                    ActionId = 5,
+                    CreateTime = DateTime.Now,
+                    UserId = NewCustomerUser.Id
+                };
+                DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
+
                 return NewCustomerUser;
             }
             return null;
@@ -90,6 +108,11 @@ namespace BLL.Services
 
         public static UserCustomerDTO Update(UserCustomerDTO CustomerUser)
         {
+            var config = new MapperConfiguration(c => {
+                c.CreateMap<LogDTO, Log>();
+            });
+            var mapper = new Mapper(config);
+
             var User = UserServices.Update(new UserDTO {Id=CustomerUser.Id, Password = CustomerUser.Password, Username = CustomerUser.Username, UserType = CustomerUser.UserType });
             var Customer = CustomerServices.Update(new CustomerDTO { Id = User.Id, Name = CustomerUser.Name, Email = CustomerUser.Email, Phone = CustomerUser.Phone, Address = CustomerUser.Address, ProfilePicture = CustomerUser.ProfilePicture, ShippingAreaId = CustomerUser.ShippingAreaId });
             if (User != null && Customer != null)
@@ -107,6 +130,14 @@ namespace BLL.Services
                     ProfilePicture = Customer.ProfilePicture,
                     ShippingAreaId = Customer.ShippingAreaId,
                 };
+
+                var log = new LogDTO()
+                {
+                    ActionId = 8,
+                    CreateTime = DateTime.Now,
+                    UserId = NewCustomerUser.Id
+                };
+                DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
                 return NewCustomerUser;
             }
             return null;

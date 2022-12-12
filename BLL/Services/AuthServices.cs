@@ -35,6 +35,17 @@ namespace BLL.Services
                     DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
                 }
 
+                if (user.UserType.Equals("Customer"))
+                {
+                    var log = new Log()
+                    {
+                        ActionId = 2,
+                        CreateTime = DateTime.Now,
+                        UserId = user.Id
+                    };
+                    DataAccessFactory.LogDataAccess().Add(mapper.Map<Log>(log));
+                }
+
                 var tk = new Token();
                 tk.UserId = user.Id;
                 tk.CreatedDate = DateTime.Now;
