@@ -87,6 +87,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\ActionListRepo.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
+    <Compile Include="Repo\CategoryRepo.cs" />
     <Compile Include="Repo\CustomerRepo.cs" />
     <Compile Include="Repo\LocationRepo.cs" />
     <Compile Include="Repo\LogRepo.cs" />

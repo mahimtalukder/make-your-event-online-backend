@@ -71,5 +71,10 @@ namespace DAL
         {
             return new TokenRepo();
         }
+
+        public static IRepo<Category, int, Category> CategoryDataAccess()
+        {
+            return new CategoryRepo();
+        }
     }
 }
