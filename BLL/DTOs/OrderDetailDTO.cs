@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    internal class OrderDetailDTO
+    public class OrderDetailDTO
     {
         public int Id { get; set; }
         [Required]

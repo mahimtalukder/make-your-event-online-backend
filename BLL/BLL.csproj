@@ -70,6 +70,7 @@
     <Compile Include="Services\ActionListServices.cs" />
     <Compile Include="Services\AdminServices.cs" />
     <Compile Include="Services\LocationServices.cs" />
+    <Compile Include="Services\OrderDetailService.cs" />
     <Compile Include="Services\OrganizingAreaServices.cs" />
     <Compile Include="Services\UserCustomerServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
