@@ -97,6 +97,7 @@
     <Compile Include="Repo\OrganizingAreaRepo.cs" />
     <Compile Include="Repo\Repo.cs" />
     <Compile Include="Repo\ReviewRepo.cs" />
+    <Compile Include="Repo\ServiceCatalogRepo.cs" />
     <Compile Include="Repo\ServiceRepo.cs" />
     <Compile Include="Repo\ShippingAddressRepo.cs" />
     <Compile Include="Repo\TokenRepo.cs" />

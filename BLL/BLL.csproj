@@ -52,6 +52,7 @@
     <Compile Include="DTOs\CategoryWithServiceDTO.cs" />
     <Compile Include="DTOs\CustomerDTO.cs" />
     <Compile Include="DTOs\LoginDTO.cs" />
+    <Compile Include="DTOs\ServiceCatalogDTO.cs" />
     <Compile Include="DTOs\ServiceDTO.cs" />
     <Compile Include="DTOs\UserAdminDTO.cs" />
     <Compile Include="DTOs\UserCustomerDTO.cs" />
@@ -76,7 +77,8 @@
     <Compile Include="Services\LocationServices.cs" />
     <Compile Include="Services\OrderDetailService.cs" />
     <Compile Include="Services\OrganizingAreaServices.cs" />
-    <Compile Include="Services\ServiceRepo.cs" />
+    <Compile Include="Services\ServiceCatalogServices.cs" />
+    <Compile Include="Services\ServiceServices.cs" />
     <Compile Include="Services\UserCustomerServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\OrganizerServices.cs" />
