@@ -19,7 +19,6 @@ namespace BLL.DTOs
         [Required]
         public DateTime Date { get; set; }
         [Required]
-        [ForeignKey("Customer")]
         public int CustomerId { get; set; }
     }
 }

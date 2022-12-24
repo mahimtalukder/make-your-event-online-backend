@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL.EF.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BLL.DTOs
 {
@@ -25,5 +26,12 @@ namespace BLL.DTOs
         public int OrganizerId { get; set; }
         [Required]
         public int CategoryId { get; set; }
+
+        public virtual List<ServiceCatalog> ServiceCatalogs { get; set; }
+
+        public ServiceDTO() 
+        {
+            ServiceCatalogs = new List<ServiceCatalog>();
+        }
     }
 }
