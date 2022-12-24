@@ -76,5 +76,15 @@ namespace DAL
         {
             return new CategoryRepo();
         }
+
+        public static IRepo<Service, int, Service> ServiceDataAccess()
+        {
+            return new ServiceRepo();
+        }
+
+        public static IRepo<ServiceCatalog, int, ServiceCatalog> ServiceCatalogDataAccess()
+        {
+            return new ServiceCatalogRepo();
+        }
     }
 }

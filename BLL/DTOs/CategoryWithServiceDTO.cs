@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    internal class CategoryWithServiceDTO
+    public class CategoryWithServiceDTO
     {
         public virtual List<Service> Services { get; set; }
         public CategoryWithServiceDTO()

@@ -61,16 +61,16 @@ namespace BLL.Services
             return mapper.Map<CategoryDTO>(ret);
         }
 
-       /* public static CategoryWithServiceDTO GetWithDetail(int id)
+        public static CategoryWithServiceDTO GetWithService(int id)
         {
             var data = DataAccessFactory.CategoryDataAccess().Get(id);
             var cfg = new MapperConfiguration(c => {
-                c.CreateMap<Order, OrderWithDetailDTO>();
+                c.CreateMap<Category, CategoryWithServiceDTO>();
                 c.CreateMap<Service, ServiceDTO>();
 
             });
             var mapper = new Mapper(cfg);
             return mapper.Map<CategoryWithServiceDTO>(data);
-        }*/
+        }
     }
 }

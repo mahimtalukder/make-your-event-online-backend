@@ -61,7 +61,7 @@ namespace BLL.Services
             return DataAccessFactory.OrganizingAreaDataAccess().Delete(id);
         }
 
-        public static OrganizingAreaDTO Update(LocationDTO data)
+        public static OrganizingAreaDTO Update(OrganizingAreaDTO data)
         {
             var config = new MapperConfiguration(c => {
                 c.CreateMap<OrganizingAreaDTO, OrganizingArea>();
