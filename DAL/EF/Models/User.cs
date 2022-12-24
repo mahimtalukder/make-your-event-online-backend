@@ -19,7 +19,6 @@ namespace DAL.EF.Models
         [Required]
         [StringLength(12)]
         public string Password { get; set; }
-        public string Token { get; set; }
         [Required]
         [StringLength(10)]
         public string UserType { get; set; }
@@ -29,8 +28,10 @@ namespace DAL.EF.Models
         public virtual Customer Customer { get; set; }  
 
         public virtual List<Log> Logs { get; set; }
+        public virtual List<Token> Tokens { get; set; }
         public User()
         {
+            Tokens = new List<Token>();
             Logs = new List<Log>();
         }
 

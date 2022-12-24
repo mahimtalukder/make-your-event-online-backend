@@ -12,7 +12,7 @@ namespace DAL.EF.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Name { get; set; }
 
         public virtual List<Log> Logs { get; set; }

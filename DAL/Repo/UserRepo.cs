@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    internal class UserRepo : Repo, IRepo<User, int, User>
+    internal class UserRepo: Repo, IRepo<User, int, User>, IAuth
     {
         public User Add(User obj)
         {
@@ -19,6 +19,12 @@ namespace DAL.Repo
                 return obj;
             }
             return null;
+        }
+
+        public User Authenticate(string Username, string Password)
+        {
+            var obj = db.Users.FirstOrDefault(x => x.Username.Equals(Username) && x.Password.Equals(Password));
+            return obj;
         }
 
         public bool Delete(int id)
@@ -44,6 +50,12 @@ namespace DAL.Repo
                 return DBUser;
             }
             return null;
+        }
+
+        public User GetUser(string Username)
+        {
+            var obj = db.Users.FirstOrDefault(x => x.Username.Equals(Username));
+            return obj;
         }
 
         public User Update(User obj)
