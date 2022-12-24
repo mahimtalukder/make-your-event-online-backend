@@ -5,6 +5,7 @@ using DAL.EF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -180,5 +181,11 @@ namespace BLL.Services
             }
             return false;
         }
+
+        /*public static Dictionary<String, int> OrderStatistics(int Id)
+        {
+            var user = Get(Id);
+            
+        }*/
     }
 }

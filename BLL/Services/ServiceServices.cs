@@ -61,5 +61,14 @@ namespace BLL.Services
             return mapper.Map<ServiceDTO>(ret);
         }
 
+        public static List<ServiceDTO> GetAllByUser(int Id)
+        {
+            var data = Get();
+            var ServiceList = (from d in data
+                               where d.OrganizerId == Id
+                               select d).ToList();
+            return ServiceList;
+        }
+
     }
 }

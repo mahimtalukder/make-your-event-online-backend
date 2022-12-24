@@ -94,5 +94,38 @@ namespace ApplicationLayer.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+
+        [Route("api/organizer/addservice")]
+        [HttpPost]
+        [OrganizationLogin]
+        public HttpResponseMessage AddService(ServiceDTO obj)
+        {
+            try
+            {
+                var data = ServiceServices.Add(obj);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+        [Route("api/organizer/getallservice/{id}")]
+        [HttpGet]
+        [OrganizationLogin]
+        public HttpResponseMessage GetAllServices(int id)
+        {
+            try
+            {
+                var data = OrganizerServices.Get(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
     }
 }
